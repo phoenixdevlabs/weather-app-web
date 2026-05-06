@@ -9,7 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.1.4",
+    "@tabler/icons-react": "^3.36.1",
+    "next": "^16.2.4",
+    "openmeteo": "^1.2.3",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
@@ -20,6 +22,10 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.4",
+    "sass": "^1.97.3",
     "typescript": "^5"
+  },
+  "overrides": {
+    "postcss": "8.5.10"
   }
 }

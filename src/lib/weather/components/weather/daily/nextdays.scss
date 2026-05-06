@@ -1,0 +1,121 @@
+.next-days {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    width: 100%;
+
+    @media screen and (max-width: 512px) {
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+
+        /* 
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        scrollbar-width: none;
+ */
+        a {
+            min-width: calc((100% - 2rem) / 3);
+        }
+    }
+
+    @media screen and (max-width: 375px) {
+        a {
+            min-width: calc((100% - 1rem) / 2);
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        width: 100%;
+        
+        transform: translate(100vw);
+        transition: all .5s ease-in-out;
+
+        /* @media screen and (max-width: 512px) {
+            transform: translate(0);
+        } */
+    }
+
+
+    a.show {
+        transform: translate(0);
+        transition: all .5s ease-in-out;
+    }
+
+    &__cell {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+        place-items: center;
+
+        @media screen and (max-width: 512px) {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            width: 100%;
+            scroll-snap-align: start;
+        }
+
+        .date {
+            font-size: 1.4rem;
+
+            &--weekday {
+                text-transform: capitalize;
+            }
+
+            &--datestring {
+                font-size: 1.2rem;
+            }
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: center;
+
+            .label {
+                font-weight: bold;
+                font-size: 1.2rem;
+                text-align: center;
+            }
+
+            &__data {
+                display: flex;
+                gap: 0.2rem;
+                align-items: flex-end;
+
+                .value {
+                    font-size: 2rem;
+                    display: flex;
+                    gap: 0.2rem;
+                    align-items: center;
+                }
+
+                .unit {
+                }
+            }
+        }
+
+        border-radius: 0.5rem;
+        background:
+            linear-gradient(rgba(0, 0, 0, 0.01), rgba(1, 1, 1, 0.05)),
+            rgba(#d4f6ff, 0.35);
+
+        backdrop-filter: blur(10px);
+        transition: all 0.5s;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+
+            cursor: pointer;
+        }
+    }
+}

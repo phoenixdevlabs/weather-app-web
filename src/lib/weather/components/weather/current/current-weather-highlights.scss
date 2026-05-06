@@ -1,0 +1,12 @@
+.highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    place-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 80rem;
+
+    grid-area: highlights;
+}

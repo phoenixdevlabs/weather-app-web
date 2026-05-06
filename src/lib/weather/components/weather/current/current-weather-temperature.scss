@@ -1,0 +1,89 @@
+.current-temperature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 1.8rem;
+
+    grid-area: temperature;
+
+    @keyframes enter-temp {
+        0% {
+            transform: translate(-4rem);
+        }
+        50% {
+            transform: translate(2rem);
+        }
+        100% {
+            transform: translate(0);
+        }
+    }
+
+    @keyframes leave-temp {
+        0% {
+            transform: translate(0);
+        }
+        100% {
+            transform: translate(-4rem);
+        }
+    }
+
+    &.offscreen {
+        animation: leave-temp 0.5s ease-in-out both;
+    }
+
+    &.enter {
+        transition: all 0.3s ease-in;
+        animation-name: enter-temp;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        animation-timing-function: ease-in-out;
+    }
+
+    @media screen and (max-width: 512px) {
+        justify-content: flex-end;
+    }
+
+    &__real {
+        display: flex;
+        font-size: 12rem;
+        line-height: 0.85;
+        width: 100%;
+        justify-content: center;
+
+        &--unit {
+            font-size: 6rem;
+            align-self: flex-start;
+            width: fit-content;
+            height: fit-content;
+        }
+    }
+
+    &__feels-like {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.4rem;
+        line-height: 1.5;
+
+        &--unit {
+            font-size: 2.4rem;
+            height: 3rem;
+            display: inline-flex;
+        }
+    }
+
+    @media screen and (max-width: 512px) {
+        &__real {
+            font-size: 8rem;
+            &--unit {
+                font-size: 3rem;
+            }
+        }
+
+        &__feels-like {
+            font-size: 2rem;
+        }
+    }
+}

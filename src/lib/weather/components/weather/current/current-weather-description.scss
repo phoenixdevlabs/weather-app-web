@@ -1,0 +1,22 @@
+.description {
+    grid-area: description;
+    text-align: center;
+
+    @keyframes enter-desc {
+        0% { transform: translate(-20rem); }
+        100% { transform: translate(0); }
+    }
+
+    @keyframes leave-desc {
+        0% { transform: translate(0); }
+        100% { transform: translate(-20rem); }
+    }
+
+    &.offscreen {
+        animation: leave-desc .5s both ease-in-out;
+    }
+
+    &.enter {
+        animation: enter-desc both 1s;
+    }
+}

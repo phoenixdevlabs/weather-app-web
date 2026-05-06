@@ -1,0 +1,93 @@
+.today {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background-color: rgba(#d4f6ff, 0.35);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &__cell {
+        display: flex;
+        justify-content: space-around;
+        padding: 1rem;
+        overflow: auto;
+
+        .date {
+            font-size: 1.4rem;
+
+            &--weekday {
+                text-transform: capitalize;
+            }
+
+            &--datestring {
+                font-size: 1.2rem;
+            }
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: center;
+            justify-content: center;
+
+            .label {
+                font-weight: bold;
+                font-size: 1.2rem;
+                text-align: center;
+            }
+
+            &__data {
+                display: flex;
+                gap: 0.2rem;
+                align-items: flex-end;
+
+                .value {
+                    font-size: 2rem;
+                    display: flex;
+                    gap: 0.2rem;
+                    align-items: center;
+                }
+
+                .unit {
+                    
+                }
+
+                &--precipitation {
+                    display: flex;
+                    flex-direction: column;
+
+                    &__data {
+                        display: flex;
+                        .value,
+                        .unit {
+                            font-size: 1.6rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 512px) {
+        &__cell {
+            &__item {
+                //flex: 0 0 6rem;
+                &__data {
+                    .value,
+                    .unit {
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
+}
